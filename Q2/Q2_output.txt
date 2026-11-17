@@ -1,0 +1,14 @@
+$ echo 2401MC58
+2401MC58
+$ schedtest
+parent pid 4 set to priority 1 (was 10)
+child pid 5 set to priority 5 (was 10)
+child pid 6 set to priority 10 (was 10)
+child pid 7 set to priority 15 (was 10)
+priority 5 finished
+priority 10 finished
+priority 15 finished
+set priority 0 -> -1 (want -1)
+set priority 21 -> -1 (want -1)
+set unknown pid 9999 -> -1 (want -1)
+Done

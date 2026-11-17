@@ -1,0 +1,18 @@
+$ echo 2401MC58
+2401MC58
+$ prottest
+stored A at 3000
+after mprotect, read: A
+child writing to protected page...
+pid 5 prottest: trap 14 err 7 on cpu 0 eip 0x75 addr 0x3000--kill proc
+parent still sees: A
+after munprotect, write ok: C
+unaligned addr -> -1 (want -1)
+len = 0 -> -1 (want -1)
+range beyond memory -> -1 (want -1)
+negative len -> -1 (want -1)
+two-page mprotect -> 0 (want 0)
+two-page read ok: xy
+two-page munprotect -> 0 (want 0)
+two-page write ok: zw
+prottest done
