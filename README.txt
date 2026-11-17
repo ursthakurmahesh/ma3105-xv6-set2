@@ -19,7 +19,10 @@ Question 1: Page Protection with mprotect() and munprotect()
   added prottest.c (registered in the Makefile UPROGS list).
 - prottest.c follows the required sequence: read after mprotect, a child
   killed on write, parent still sees A, write of C after munprotect, and the
-  three -1 error cases. See Q1/Q1_output.txt.
+  three -1 error cases. It also checks a negative len and a two-page
+  range. See Q1/Q1_output.txt; Q1/Q1_screenshot.jpg shows the same
+  test passing on the author's own machine. The cleaned source is
+  Q1/2401MC58_Set2_Q1.tar.gz.
 
 Question 2: Priority-Based CPU Scheduler
 - Added an int priority field to struct proc (proc.h); allocproc() in proc.c
@@ -35,7 +38,8 @@ Question 2: Priority-Based CPU Scheduler
   priorities 5, 10 and 15, and each child runs a CPU-bound loop; they finish
   in priority order and the parent prints Done. It also checks that priority
   0, priority 21 and an unknown pid each return -1. See Q2/Q2_output.txt;
-  the cleaned source is Q2/2401MC58_Set2_Q2.tar.gz.
+  Q2/Q2_screenshot.jpg shows the same test passing on the author's own
+  machine. The cleaned source is Q2/2401MC58_Set2_Q2.tar.gz.
 
 How to build and test on your system (Linux, or Windows with WSL):
 Prerequisites: gcc and make (GCC 11 and 12 both work; the trees include the
